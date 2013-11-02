@@ -166,6 +166,7 @@ static NSDictionary *RKConnectionAttributeValuesWithObject(RKConnectionDescripti
         }
         __block NSSet *managedObjects = [self.managedObjectCache managedObjectsWithEntity:[connection.relationship destinationEntity]
                                                                           attributeValues:attributeValues
+                                                                                predicate:nil
                                                                    inManagedObjectContext:self.managedObjectContext];
 
         [self.managedObjectContext performBlockAndWait:^{
